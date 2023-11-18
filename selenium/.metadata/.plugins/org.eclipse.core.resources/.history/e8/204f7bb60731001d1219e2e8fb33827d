@@ -1,0 +1,18 @@
+package testcases.selenium;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Table_Handling_12 {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		WebDriver driver = new ChromeDriver();
+		driver.get("http://qef-linux8-us-dm.deloitte.com:8080/");
+		System.out.println("page is opened");
+		Thread.sleep(5000);
+		driver.close();
+
+	}
+
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="9690" started-at="2022-10-25T04:32:04Z" finished-at="2022-10-25T04:32:14Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="9690" started-at="2022-10-25T04:32:04Z" finished-at="2022-10-25T04:32:14Z">
+      <class name="kanya.ExtentReportDemo">
+        <test-method status="PASS" signature="config()[pri:0, instance:kanya.ExtentReportDemo@402a079c]" name="config" is-config="true" duration-ms="175" started-at="2022-10-25T10:02:04Z" finished-at="2022-10-25T10:02:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- config -->
+        <test-method status="PASS" signature="initialDemo()[pri:0, instance:kanya.ExtentReportDemo@402a079c]" name="initialDemo" duration-ms="9505" started-at="2022-10-25T10:02:04Z" finished-at="2022-10-25T10:02:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialDemo -->
+      </class> <!-- kanya.ExtentReportDemo -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

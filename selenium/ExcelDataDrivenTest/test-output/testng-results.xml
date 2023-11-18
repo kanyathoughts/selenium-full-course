@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="674" started-at="2022-10-27T07:44:29Z" finished-at="2022-10-27T07:44:30Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="674" started-at="2022-10-27T07:44:29Z" finished-at="2022-10-27T07:44:30Z">
+      <class name="excelDataProvider.ExcelDataProviderTest">
+        <test-method status="PASS" signature="dataFromExcel(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:excelDataProvider.ExcelDataProviderTest@5cb9f472]" name="dataFromExcel" duration-ms="10" started-at="2022-10-27T13:14:30Z" data-provider="getDataFromExcel" finished-at="2022-10-27T13:14:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[hello]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[text]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA["1"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dataFromExcel -->
+        <test-method status="PASS" signature="dataFromExcel(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:excelDataProvider.ExcelDataProviderTest@5cb9f472]" name="dataFromExcel" duration-ms="2" started-at="2022-10-27T13:14:30Z" data-provider="getDataFromExcel" finished-at="2022-10-27T13:14:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[bye]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[message]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA["143"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dataFromExcel -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:excelDataProvider.ExcelDataProviderTest@5cb9f472]" name="afterMethod" is-config="true" duration-ms="0" started-at="2022-10-27T13:14:30Z" finished-at="2022-10-27T13:14:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="dataFromExcel(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:excelDataProvider.ExcelDataProviderTest@5cb9f472]" name="dataFromExcel" duration-ms="1" started-at="2022-10-27T13:14:30Z" data-provider="getDataFromExcel" finished-at="2022-10-27T13:14:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[solo]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[call]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA["435"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dataFromExcel -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:excelDataProvider.ExcelDataProviderTest@5cb9f472]" name="afterMethod" is-config="true" duration-ms="0" started-at="2022-10-27T13:14:30Z" finished-at="2022-10-27T13:14:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:excelDataProvider.ExcelDataProviderTest@5cb9f472]" name="afterMethod" is-config="true" duration-ms="0" started-at="2022-10-27T13:14:30Z" finished-at="2022-10-27T13:14:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- excelDataProvider.ExcelDataProviderTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results total="4" passed="4" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-10-26T08:27:16Z" name="SuiteKanya" finished-at="2022-10-26T08:28:29Z" duration-ms="73716">
+    <groups>
+    </groups>
+    <test started-at="2022-10-26T08:27:16Z" name="TestKanya2" finished-at="2022-10-26T08:28:11Z" duration-ms="55436">
+      <class name="sample.ErrorValidations">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:sample.ErrorValidations@7c51f34b]" started-at="2022-10-26T13:57:16Z" name="launchApplication" finished-at="2022-10-26T13:57:23Z" duration-ms="7608" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="errorHandling()[pri:0, instance:sample.ErrorValidations@7c51f34b]" started-at="2022-10-26T13:57:23Z" name="errorHandling" finished-at="2022-10-26T13:57:24Z" duration-ms="866" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- errorHandling -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:sample.ErrorValidations@7c51f34b]" started-at="2022-10-26T13:57:24Z" name="tearDown" finished-at="2022-10-26T13:57:40Z" duration-ms="16236" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:sample.ErrorValidations@7c51f34b]" started-at="2022-10-26T13:57:40Z" name="launchApplication" finished-at="2022-10-26T13:57:45Z" duration-ms="4807" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="prodcutErrorHandling()[pri:0, instance:sample.ErrorValidations@7c51f34b]" started-at="2022-10-26T13:57:45Z" name="prodcutErrorHandling" finished-at="2022-10-26T13:57:55Z" duration-ms="9722" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- prodcutErrorHandling -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:sample.ErrorValidations@7c51f34b]" started-at="2022-10-26T13:57:55Z" name="tearDown" finished-at="2022-10-26T13:58:11Z" duration-ms="16178" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- sample.ErrorValidations -->
+    </test> <!-- TestKanya2 -->
+    <test started-at="2022-10-26T08:27:16Z" name="TestKanya1" finished-at="2022-10-26T08:28:29Z" duration-ms="73716">
+      <class name="sample.StandaloneProjectDuplicate">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:sample.StandaloneProjectDuplicate@2d9caaeb]" started-at="2022-10-26T13:57:16Z" name="launchApplication" finished-at="2022-10-26T13:57:23Z" duration-ms="7635" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="step01()[pri:0, instance:sample.StandaloneProjectDuplicate@2d9caaeb]" started-at="2022-10-26T13:57:23Z" name="step01" finished-at="2022-10-26T13:57:49Z" duration-ms="25714" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- step01 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:sample.StandaloneProjectDuplicate@2d9caaeb]" started-at="2022-10-26T13:57:49Z" name="tearDown" finished-at="2022-10-26T13:58:05Z" duration-ms="16197" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:sample.StandaloneProjectDuplicate@2d9caaeb]" started-at="2022-10-26T13:58:05Z" name="launchApplication" finished-at="2022-10-26T13:58:08Z" duration-ms="2706" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="step02()[pri:0, instance:sample.StandaloneProjectDuplicate@2d9caaeb]" started-at="2022-10-26T13:58:08Z" name="step02" finished-at="2022-10-26T13:58:13Z" duration-ms="5261" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- step02 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:sample.StandaloneProjectDuplicate@2d9caaeb]" started-at="2022-10-26T13:58:13Z" name="tearDown" finished-at="2022-10-26T13:58:29Z" duration-ms="16188" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- sample.StandaloneProjectDuplicate -->
+    </test> <!-- TestKanya1 -->
+  </suite> <!-- SuiteKanya -->
+</testng-results>

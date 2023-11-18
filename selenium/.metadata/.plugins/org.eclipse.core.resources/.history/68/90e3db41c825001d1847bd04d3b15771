@@ -1,0 +1,10 @@
+package testcases.selenium;
+
+public class SeleniumAutomation_7 {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

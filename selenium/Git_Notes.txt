@@ -1,0 +1,27 @@
+GIT - It is a free open source source version management system.
+
+To work on this we have to have git in our local and GITHUB(which is a central repository where other prople can download our code work on it.)
+
+Once the setup is done with github, create your new repository
+
+you can do pull, push everything with commands or different tools(Tortoise git, Eclipse has it's own git plugin[EGIT], Intellij git) but as a basic thing we should know few commands that will help you in interviews also.
+
+Use this link "https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html" where all basic git commands clearly mentioned.
+
+our new repository is ready and create any folder in your file explorer and open cmd there and tell who you are by giving following commands
+
+--------->git config --global user.name "Kanyakuamri"
+--------->git config --global user.email "kanyakumari950@gmail.com" //--global is useful that we can access git hub from any global location.
+
+--------->git init //Initilaize it as git repository
+//it is mandatory that if we give this command git will create it's own .git repository to store local code and it's hidden file.
+
+If we want to commit our code to github we have to add our files to "staging" from staging we can commit our code to github.
+
+--------->git commit -m "my first commit" //-m stands for commit message and then we have to give the commit message inside quotes.
+
+Once all code is committed we have to push our code to git hub that means remote git repository. We have setup a connection from local to remote git repository 
+
+--------->git remote add origin https://github.com/kanyathoughts/GitDemo.git //we have registered origin with the given repository (GitDemo) and we have done the setup from local to remote repository
+
+--------->git push origin master (we have to push the code to origin, master is the main branch)

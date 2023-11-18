@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;MobileEmulatorTest.java&apos; to &apos;ChromeDevToolsProtocal_new/src/devTools&apos;&#x0D;&#x0A;- Original project: &apos;ChromeDevtoolsProtocal&apos;&#x0D;&#x0A;- Destination element: &apos;ChromeDevToolsProtocal_new/src/devTools&apos;&#x0D;&#x0A;- Original element: &apos;devTools.MobileEmulatorTest.java&apos;" description="Copy compilation unit" destination="=ChromeDevToolsProtocal_new/src&lt;devTools" element1="/src&lt;devTools{MobileEmulatorTest.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1666961658517" units="1" version="1.0"/>
+</session>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!-- We can execute tests parallelly by giving parallel and thread-count. If thread-count is 2 then suite will execute 2 tests parallelly if it is 3 then 3 will execute parallelly  -->
+
+<suite name="Loan Department" parallel="tests" thread-count="2">
+	<listeners>
+	<!--  we have to give class-name instead of name for listener -->
+		<listener class-name="test.TestNG_Listeners" />
+	</listeners>
+	<!-- This is suite level parameter -->
+	<parameter name="URL" value="https://www.google.com/" />
+	<!-- Inside test folder also we can use parallel classes execution -->
+	<test name="personal loan" parallel="classes" thread-count="2">
+		<!-- This is test level parameters and we can give multiple parameters -->
+		<parameter name="URL" value="https://personalLoan.com/" />
+		<parameter name="key" value="123456" />
+		<classes>
+			<class name="test.Demo1">
+				<methods>
+					<!-- We have 100 testcases in one class we want to exclude 99 testcses 
+						but it is very tough to exclude 99 testcases instead we can simply include 
+						one testcase which we want -->
+					<include name="step01" />
+				</methods>
+			</class>
+			<class name="test.Demo2" />
+			<class name="test.Demo4" />
+			<class name="test.ParameterizedTest" />
+		</classes>
+	</test>
+	<test name="car loan">
+		<parameter name="URL" value="https://Carloan.com/" />
+		<classes>
+			<class name="test.Demo3">
+				<!-- I want to exclude "web login car loan" testcase (or) method -->
+				<methods>
+					<exclude name="webLoginCarLoan" />
+					<!-- I want to exclude all mobile related car login testcases by using 
+						regular expressions -->
+					<exclude name="^mobile.*" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<!-- <test name="only visa card department"> <classes> <class name="test.VisaCard" 
+		/> </classes> </test> -->
+</suite>
+
+<!-- Second suite <suite name="Debit card department"> <test name="only visa 
+	card department"> <classes> <class name="test.VisaCard" /> </classes> </test> 
+	</suite> -->

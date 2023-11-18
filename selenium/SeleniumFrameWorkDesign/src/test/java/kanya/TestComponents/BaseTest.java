@@ -1,0 +1,93 @@
+package kanya.TestComponents;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.time.Duration;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Properties;
+
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.reporters.Files;
+
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+import kanya.PageObjects.LandingPage;
+
+public class BaseTest {
+
+	public WebDriver driver;
+	public LandingPage lp;
+	
+	public WebDriver initializeDriver() throws IOException {
+		//Properties class
+		Properties prop = new Properties();
+		FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\java\\kanya\\Resources\\GlobalData.properties");
+		prop.load(fis);
+		
+		String browserName = System.getProperty("browser") != null ? System.getProperty("browser") : prop.getProperty("browser");
+		
+		System.out.println("browserName: " + browserName);
+		if(browserName.equalsIgnoreCase("chrome")) {
+			WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver();
+		} else if(browserName.equalsIgnoreCase("firefox")) {
+			WebDriverManager.firefoxdriver().setup();
+			driver = new FirefoxDriver();
+			//firefox code
+		} else if (browserName.equalsIgnoreCase("edge")) {
+			WebDriverManager.edgedriver().setup();
+			driver = new EdgeDriver();
+			//edge code
+		}
+		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().window().maximize();
+		return driver;
+	}
+	
+	//This will applicable to it's child classes also.
+	//Before every child method this method will execute.
+	@BeforeMethod(alwaysRun=true)
+	public WebDriver launchApplication() throws IOException {
+		driver = initializeDriver();
+		//We can access parent variables in child classes so no need to create object again in child classes.
+		lp = new LandingPage(driver);
+		lp.goTo();
+		return driver;
+	}
+	
+	@AfterMethod(alwaysRun=true)
+	public void tearDown() {
+		driver.close();
+	}
+	
+	public List<HashMap<String, String>> readDataFromJson(String filePath) throws IOException {
+		// read json to String
+		String jsonContent = Files.readFile(new File(System.getProperty("user.dir") + "\\src\\test\\java\\kanya\\data\\DataReaderFromJson.java"));
+
+		// read String to HashMap, for this Jackson Databin dependency is required
+		ObjectMapper mapper = new ObjectMapper();
+		
+		List<HashMap<String, String>> data = mapper.readValue(jsonContent, new TypeReference<List<HashMap<String, String>>>() {
+		});
+
+		return data;		
+	}
+	
+	public String getScreenshotFilePath(String testCaseName, WebDriver driver) throws IOException {
+		File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		Files.copyFile(new FileInputStream(src), new File(System.getProperty("user.dir") + "/RunResults/" + testCaseName + ".png"));
+		return System.getProperty("user.dir") + "/RunResults/" + testCaseName + ".png";
+	}
+}

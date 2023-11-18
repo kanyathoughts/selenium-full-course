@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Loan Department">
+	<listeners>
+		<listener class-name="test.TestNG_Listeners" />
+	</listeners>
+	<test name="test">
+		<classes>
+			<class name="test.Dummy_For_Listener"/>
+		</classes>
+	</test>
+</suite>

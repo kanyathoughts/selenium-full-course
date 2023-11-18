@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="22" started-at="2022-10-22T09:29:42Z" finished-at="2022-10-22T09:29:42Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="22" started-at="2022-10-22T09:29:42Z" finished-at="2022-10-22T09:29:42Z">
+      <class name="testcases.selenium.TestNG_Notes">
+        <test-method status="PASS" signature="step01()[pri:0, instance:testcases.selenium.TestNG_Notes@3532ec19]" name="step01" duration-ms="10" started-at="2022-10-22T14:59:42Z" finished-at="2022-10-22T14:59:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- step01 -->
+      </class> <!-- testcases.selenium.TestNG_Notes -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

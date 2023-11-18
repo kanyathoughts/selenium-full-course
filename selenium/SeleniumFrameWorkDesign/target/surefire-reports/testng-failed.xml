@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="tests" name="Failed suite [SuiteKanya]" verbose="0">
+  <listeners>
+    <listener class-name="sample.ListenersForExtentReport"/>
+  </listeners>
+  <test parallel="tests" name="TestKanya1(failed)">
+    <classes>
+      <class name="sample.StandaloneProjectDuplicate">
+        <methods>
+          <include name="step02"/>
+          <include name="step01"/>
+          <include name="tearDown"/>
+          <include name="launchApplication"/>
+        </methods>
+      </class> <!-- sample.StandaloneProjectDuplicate -->
+      <class name="sample.ErrorValidations">
+        <methods>
+          <include name="tearDown"/>
+          <include name="launchApplication"/>
+        </methods>
+      </class> <!-- sample.ErrorValidations -->
+    </classes>
+  </test> <!-- TestKanya1(failed) -->
+  <test parallel="tests" name="TestKanya2(failed)">
+    <classes>
+      <class name="sample.StandaloneProjectDuplicate">
+        <methods>
+          <include name="tearDown"/>
+          <include name="launchApplication"/>
+        </methods>
+      </class> <!-- sample.StandaloneProjectDuplicate -->
+      <class name="sample.ErrorValidations">
+        <methods>
+          <include name="tearDown"/>
+          <include name="errorHandling"/>
+          <include name="prodcutErrorHandling"/>
+          <include name="launchApplication"/>
+        </methods>
+      </class> <!-- sample.ErrorValidations -->
+    </classes>
+  </test> <!-- TestKanya2(failed) -->
+</suite> <!-- Failed suite [SuiteKanya] -->

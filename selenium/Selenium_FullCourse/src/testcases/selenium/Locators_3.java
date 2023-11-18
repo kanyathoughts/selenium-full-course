@@ -1,0 +1,126 @@
+package testcases.selenium;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Locators_3 {
+
+	public static void main(String[] args) throws InterruptedException {
+	
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\kdarisi\\Downloads\\chromedriver_win32 (2)\\chromedriver.exe");
+		
+		WebDriver driver = new ChromeDriver();
+		
+		//If we want to perform some actions on the web page we have to identify the HTML elements.
+		//Locators are the way to identify HTML elementes in the browser.
+		/*
+		 * 1. ID
+		 * 2. Xpath
+		 * 3. CSS Selector
+		 * 4. name
+		 * 5. Class Name
+		 * 6. Tag Name
+		 * 7. Link Text
+		 * 8. Partial Link Text
+		 */
+		
+		/*The below code is for username element
+		 * 
+		 * <input type="text" placeholder="Username" id="inputUsername" value="">
+		 * 1. input is the tag name
+		 * 2. type, placeholder, id, value are the attributes
+		 * 3. text, Username, inputUsername are the values of the corresponding attributes.
+		 */
+		
+		driver.get("https://rahulshettyacademy.com/locatorspractice/");
+		
+		Thread.sleep(5 * 1000);
+		driver.findElement(By.id("inputUsername")).sendKeys("Kanya");
+		driver.findElement(By.name("inputPassword")).sendKeys("hello123");
+		driver.findElement(By.className("submit")).click(); //If we see space in the class name then multiple class names available to that
+		//eg: <button class="submit signInBtn" type="submit">Sign In</button>
+		//We can consider either "submit" or "signInBtn"
+		
+		//CSS Selector
+		/* 
+		 * <input type="text" placeholder="Username" id="inputUsername" value="">
+		 * 
+		 * <button class="submit signInBtn" type="submit">Sign In</button>
+		 * CSS Selector is the important way to uniquely identify elements in web page.
+		 * 1. Classname -> tagname.classname (eg: button.signInBtn) we can give .classname without giving tag name. (eg: .signInBtn)
+		 * 2. Id -> tagname#Id (eg: input#inputUsername)
+		 * 3. Tagname[attribute='value']  (eg: input[placeholder='Username'])
+		 */
+		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5)); //implicit wait. This comes under synchronization concepts.
+		//download selectorshub plugin in the chrome. there we can see whether our css selector is unique or not.
+		//in console also we can check css selector by giving this code $('p.error')
+		System.out.println("This is by class name in Css selector: " + driver.findElement(By.cssSelector("p.error")).getText().trim()); //This is for class name
+		System.out.println("This is by customize css selector: " + driver.findElement(By.cssSelector("p[class='error']")).getText().trim());
+		
+		
+		//Link text 
+		//a tag means "anchor" tag this represents web links by attribute "href" "hyperlink reference" and some link text.
+		driver.findElement(By.linkText("Forgot your password?")).click();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+		
+		//xpath
+		//syntax: //Tagname[@attribute='value'][index] (eg: //input[@placeholder='Username'])
+		//in the console we have to give like this. (eg: $x("//input[@placeholder='Name']"))
+		driver.findElement(By.xpath("//input[@placeholder='Name']")).sendKeys("Kanya");
+		driver.findElement(By.xpath("//input[@placeholder='Email']")).sendKeys("123@gamil.com");
+		
+		//clear the content from email
+		driver.findElement(By.xpath("//input[@placeholder='Email']")).clear();
+		
+		//we are identifying with index number "//input[@type='text'][2]" so 2 is the index number
+		driver.findElement(By.xpath("//input[@type='text'][2]")).sendKeys("jashu@gmail.com");
+		
+		
+		//In css selector we can not give index. we can give through nth-child() inside parenthesis give the index value.
+		//index value may differ from xpath and css selector bcoz they will sometimes identify hidden content in the web ui as well.
+		System.out.println(driver.findElement(By.cssSelector("input[type='text']:nth-child(4)")).getText().trim());
+		
+		driver.findElement(By.xpath("//input[@placeholder='Phone Number']")).sendKeys("99999");
+		Thread.sleep(3000);
+		
+		/*Printing phone number text
+		--------------------------------------
+		Some times we don't see any attributes for some elements so we have to purely depend on parent tags.
+		form is the parent atg and inside that we have soo many input tags and based on index it will take the exact element.
+        */		
+		System.out.println(driver.findElement(By.xpath("//form/input[3]")).getText().trim()); //first tag will be the parent tag and we have to decalre all other child tags with single slash only.
+		
+		//We can traverse through tags in CSS Selector as well.
+		//ParentTagName childtagname (we have to give space between parent and child tag names in CSS Selectors.)
+		System.out.println(driver.findElement(By.cssSelector("form input:nth-child(4)")).getText().trim());
+		
+		driver.findElement(By.cssSelector(".reset-pwd-btn")).click();
+		
+		Thread.sleep(3000);
+		System.out.println(driver.findElement(By.xpath("//p[@class='infoMsg']")).getText().trim());
+		
+		//Element interception error will occur when the page is loading/changing from one view to other view and we are trying to click on the element in the progress so we have to wait 
+		//till the view/element gets visible.
+		
+		driver.findElement(By.xpath("//div[@class='forgot-pwd-btn-conainer']/button[@class='go-to-login-btn']")).click(); //From parent to child xpath.
+		Thread.sleep(2000);
+		driver.findElement(By.cssSelector("#inputUsername")).sendKeys("kanya");
+		driver.findElement(By.cssSelector("input[type*='pass']")).sendKeys("rahulshettyacademy"); //with regular expressions in CSS Selectors (type attribute should contain pass and it can have any other characters also.)
+		
+		//driver.findElement(By.cssSelector("input[type^='pass']")).sendKeys("rahulshettyacademy"); //type attribute value should start with pass
+		//driver.findElement(By.cssSelector("input[type$='word']")).sendKeys("rahulshettyacademy"); //type attribute value should end with word
+		
+		driver.findElement(By.cssSelector("#chkboxOne")).click();
+		
+		driver.findElement(By.xpath("//button[contains(@class, 'submit')]")).click(); //xpath regular expressions
+		
+		
+		
+
+	}
+
+}

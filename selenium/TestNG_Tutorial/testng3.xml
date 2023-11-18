@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Loan Department">
+	<test name="Groups Example">
+		<groups>
+			<run>
+				<include name="smoke" />
+				
+				<!-- We can even give exclude for groups as it will exclude smoke and run run remaining all testcases -->
+				<!-- <exclude name="smoke" /> -->
+			</run>
+		</groups>
+		<!-- We have to give all classes where we have defined groups -->
+		<classes>
+			<class name="test.Demo1" />
+			<class name="test.Demo2" />
+			<class name="test.Demo3" />
+			<class name="test.Demo4" />
+		</classes>
+	</test>
+
+</suite> 

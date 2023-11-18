@@ -1,0 +1,90 @@
+package sample;
+
+import java.io.IOException;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.ITestContext;
+import org.testng.ITestListener;
+import org.testng.ITestResult;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
+
+import kanya.Resources.ExtentReporter;
+import kanya.TestComponents.BaseTest;
+
+public class ListenersForExtentReport extends BaseTest implements ITestListener{
+
+	ExtentReports extent = ExtentReporter.getReportObject();
+	ExtentTest test;
+	//We are introducing this threadlocal concept because if we run tests parallelly then test(ExtentTest) object is getting overridden by other test due to concurrency to 
+	//avoid that we are taking this concept into consideration.
+	//This will create individual thread id's for specific tests and based upon thread id we can get the exact test name and which is accessing the which test.
+	ThreadLocal<ExtentTest> threadLocal = new ThreadLocal<>(); //It is called thread safe
+	@Override
+	public void onFinish(ITestContext arg0) {
+		extent.flush();
+	}
+
+	@Override
+	public void onStart(ITestContext arg0) {
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public void onTestFailedButWithinSuccessPercentage(ITestResult arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onTestFailure(ITestResult arg0) {
+		//we will know that test failed
+		//We are getting exact test by getting from thread local
+		threadLocal.get().log(Status.FAIL, "Test failed");
+		//we want to see the error message as well why it failed
+		threadLocal.get().fail(arg0.getThrowable());
+		//To make driver object to work we have to get the field of driver to the current getScreenshotFilePath method.
+		try {
+			driver = (WebDriver) arg0.getTestClass().getRealClass().getField("driver").get(arg0.getInstance());
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} 
+		//take screenshot and attach to report
+		try {
+			threadLocal.get().addScreenCaptureFromPath(getScreenshotFilePath(arg0.getMethod().getMethodName(), driver), arg0.getMethod().getMethodName());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//direct attaching screenshot for the failed one
+		threadLocal.get().log(Status.FAIL, "Test failed", MediaEntityBuilder.createScreenCaptureFromPath("").build());
+		//for failed one red color we are giving
+		threadLocal.get().fail(MarkupHelper.createLabel(arg0.getMethod().getMethodName() + " :Passed", ExtentColor.RED));
+	}
+
+	@Override
+	public void onTestSkipped(ITestResult arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onTestStart(ITestResult result) {
+		test = extent.createTest(result.getMethod().getMethodName());
+		//We are setting the test value to threadlocal class
+		threadLocal.set(test); 
+	}
+
+	@Override
+	public void onTestSuccess(ITestResult arg0) {
+		threadLocal.get().log(Status.PASS, "Test passed");
+	}
+
+}

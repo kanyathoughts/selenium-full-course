@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;testcases.selenium.Miscelleanous_Handle_23&apos; to &apos;Miscelleanous_And_Screenshot_Handle_23&apos;&#x0D;&#x0A;- Original project: &apos;Selenium_FullCourse&apos;&#x0D;&#x0A;- Original element: &apos;testcases.selenium.Miscelleanous_Handle_23&apos;&#x0D;&#x0A;- Renamed element: &apos;testcases.selenium.Miscelleanous_And_Screenshot_Handle_23&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Miscelleanous_Handle_23&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;testcases.selenium{Miscelleanous_Handle_23.java[Miscelleanous_Handle_23" matchStrategy="1" name="Miscelleanous_And_Screenshot_Handle_23" qualified="false" references="true" similarDeclarations="false" stamp="1663739312780" textual="false" version="1.0"/>
+</session>

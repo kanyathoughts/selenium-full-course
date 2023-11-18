@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;testcases.selenium.SeleniumAutomation_7&apos; to &apos;SeleniumAutomation_Dropdown_7&apos;&#x0D;&#x0A;- Original project: &apos;Selenium_FullCourse&apos;&#x0D;&#x0A;- Original element: &apos;testcases.selenium.SeleniumAutomation_7&apos;&#x0D;&#x0A;- Renamed element: &apos;testcases.selenium.SeleniumAutomation_Dropdown_7&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;SeleniumAutomation_7&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;testcases.selenium{SeleniumAutomation_7.java[SeleniumAutomation_7" matchStrategy="1" name="SeleniumAutomation_Dropdown_7" qualified="false" references="true" similarDeclarations="false" stamp="1662830545357" textual="false" version="1.0"/>
+</session>

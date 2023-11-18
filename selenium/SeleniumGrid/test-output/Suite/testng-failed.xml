@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="classes">
+  <test name="Test(failed)" parallel="classes">
+    <classes>
+      <class name="seleniumGrid.GridTest_chrome">
+        <methods>
+          <include name="step01"/>
+        </methods>
+      </class> <!-- seleniumGrid.GridTest_chrome -->
+      <class name="seleniumGrid.GridTest_firefox">
+        <methods>
+          <include name="step01"/>
+        </methods>
+      </class> <!-- seleniumGrid.GridTest_firefox -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

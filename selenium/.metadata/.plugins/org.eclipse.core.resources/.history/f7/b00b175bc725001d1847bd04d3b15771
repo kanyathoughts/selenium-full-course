@@ -1,0 +1,23 @@
+package testcases.selenium;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class WindowActivities {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\kdarisi\\Downloads\\chromedriver_win32 (2)\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		
+		//To maximize window
+		driver.manage().window().maximize();
+		//By default it will wait for the page till it gets load
+		driver.get("http://google.com");
+		//It won't wait for page load.
+		driver.navigate().to("https://rahulshettyacademy.com/AutomationPractice/");
+		driver.navigate().back();
+		driver.navigate().forward();
+		Thread.sleep(2000);
+	}
+
+}

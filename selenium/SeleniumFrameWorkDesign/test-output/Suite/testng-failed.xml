@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" name="Failed suite [Suite]" parallel="tests">
+  <test name="SubmitOrder(failed)" parallel="methods">
+    <classes>
+      <class name="sample.StandaloneProjectDuplicate">
+        <methods>
+          <include name="step02"/>
+          <include name="step01"/>
+          <include name="tearDown"/>
+          <include name="launchApplication"/>
+        </methods>
+      </class> <!-- sample.StandaloneProjectDuplicate -->
+    </classes>
+  </test> <!-- SubmitOrder(failed) -->
+</suite> <!-- Failed suite [Suite] -->

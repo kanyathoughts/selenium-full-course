@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SuiteKanya" parallel="tests" thread-count="2">
+	<listeners>
+		<listener class-name="sample.ListenersForExtentReport" />
+	</listeners>
+	<test name="TestKanya1">
+		<classes>
+			<class name="sample.StandaloneProjectDuplicate" />
+		</classes>
+	</test>
+	<test name="TestKanya2">
+		<classes>
+			<class name="sample.ErrorValidations" />
+		</classes>
+	</test>
+	</suite> 

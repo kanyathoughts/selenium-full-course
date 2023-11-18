@@ -1,0 +1,56 @@
+package sample;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class StandaloneProject {
+
+	public static void main(String[] args) throws InterruptedException {
+		//We don't need to set system property everytime in the project and we don't need to download chromeDriver everytime based on our chrome version
+		//WebDriverManager is not default one from selenium jars so we have to add this dependency inside pom.xml file
+		//This will automatically download chromeDriver based on our chrome version.
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver();
+		
+		//Global declaration of implicit wait for any sync issues
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+		
+		driver.get("https://rahulshettyacademy.com/client/");
+		
+		//Create an account by doing registration
+		driver.findElement(By.xpath("//a[text()='Register here']")).click();
+		driver.findElement(By.xpath("//input[@placeholder='First Name']")).sendKeys("Kanyakumari");
+		driver.findElement(By.xpath("//input[@placeholder='Last Name']")).sendKeys("Darisi");
+		driver.findElement(By.xpath("//input[@placeholder='email@example.com']")).sendKeys("kanya@gmail.com");
+		driver.findElement(By.xpath("//input[@placeholder='enter your number']")).sendKeys("9948847907");
+		
+		//static dropdown
+		WebElement dropdown = driver.findElement(By.xpath("//select[@class='custom-select ng-pristine ng-valid ng-touched']"));
+		Select value = new Select(dropdown);
+		value.selectByValue("3: Engineer");
+		
+		//female radio button
+		driver.findElement(By.xpath("//label[contains(.,'Female')]/input[@type='radio']")).click();
+		
+		driver.findElement(By.id("userPassword")).sendKeys("Kanya@9134");
+		driver.findElement(By.id("confirmPassword")).sendKeys("Kanya@9134");
+		
+		driver.findElement(By.xpath("//input[@type='checkbox']")).click();
+		
+		driver.findElement(By.xpath("//input[@value='Register']")).click();
+		
+		Thread.sleep(3000);
+		//back to login page
+		
+		driver.findElement(By.xpath("//a[text()='Login here']")).click();
+
+	}
+
+}
